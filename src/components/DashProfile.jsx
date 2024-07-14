@@ -189,42 +189,43 @@ export default function DashProfile() {
             ref={filePickerRef}
             hidden
           />
-          <div
-            className="profile-image-container"
-            onClick={() => filePickerRef.current.click()}
-          >
-            {imageFileUploadProgress && (
-              <CircularProgressbar
-                value={imageFileUploadProgress || 0}
-                text={`${imageFileUploadProgress}%`}
-                strokeWidth={5}
-                styles={{
-                  root: {
-                    width: "100%",
-                    height: "100%",
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                  },
-                  path: {
-                    stroke: `rgba(62, 152, 199, ${
-                      imageFileUploadProgress / 100
-                    })`,
-                  },
-                }}
-              />
-            )}
-            <img
-              src={imageFileUrl || currentUser.profilePicture}
-              alt="user"
-              style={{ margin: "0px", padding: "0px" }}
-              className={`profile-image ${
-                imageFileUploadProgress &&
-                imageFileUploadProgress < 100 &&
-                "profile-image-uploading"
-              }`}
-            />
-          </div>
+      <div
+  className="custom-profile-container"
+  onClick={() => filePickerRef.current.click()}
+>
+  {imageFileUploadProgress && (
+    <CircularProgressbar
+      value={imageFileUploadProgress || 0}
+      text={`${imageFileUploadProgress}%`}
+      strokeWidth={5}
+      styles={{
+        root: {
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          top: 0,
+          left: 0,
+        },
+        path: {
+          stroke: `rgba(62, 152, 199, ${
+            imageFileUploadProgress / 100
+          })`,
+        },
+      }}
+    />
+  )}
+  <img
+    src={imageFileUrl || currentUser.profilePicture}
+    alt="user"
+    style={{ margin: "0px", padding: "0px" }}
+    className={`custom-profile-image ${
+      imageFileUploadProgress &&
+      imageFileUploadProgress < 100 &&
+      "custom-image-uploading"
+    }`}
+  />
+</div>
+
           {imageFileUploadError && (
             <Alert color="failure">{imageFileUploadError}</Alert>
           )}
@@ -241,6 +242,7 @@ export default function DashProfile() {
           />
 
           <TextField
+          disabled={true}
             type="email"
             id="email"
             size="small"

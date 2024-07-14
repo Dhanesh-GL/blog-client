@@ -660,3 +660,28 @@ padding: 10px;
 .t {
   width: 1%;
 }
+
+
+.custom-profile-container {
+  position: relative;
+  width: 8rem; /* Equivalent to w-32 */
+  height: 8rem; /* Equivalent to h-32 */
+  margin-left: auto;
+  margin-right: auto; /* Equivalent to self-center */
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Equivalent to shadow-md */
+  overflow: hidden;
+  border-radius: 50%; 
+  /* Equivalent to rounded-full */
+}
+
+.custom-profile-image {
+  border-radius: 50%; /* Equivalent to rounded-full */
+  width: 100%; /* Equivalent to w-full */
+  height: 100%; /* Equivalent to h-full */
+  object-fit: cover; /* Equivalent to object-cover */
+}
+
+.custom-image-uploading {
+  opacity: 0.6; /* Equivalent to opacity-60 */
+}
